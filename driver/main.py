@@ -1,8 +1,12 @@
+import os
 import pandas as pd
 from tqdm import tqdm
 from generator.addName import certificate
 
 data = pd.read_csv("../data/participantDetails.csv")
+
+if not (os.path.exists('../certificates')):
+    os.mkdir('../certificates')
 
 for i in tqdm(range(len(data))):
 
